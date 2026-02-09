@@ -1,0 +1,13 @@
+create database university;
+create user uniuser@'localhost' IDENTIFIED BY 'unipass';
+grant all on university.* to uniuser@'localhost';
+
+use university;
+create table users(
+username VARCHAR(20) primary key,
+fname VARCHAR(30),
+lname VARCHAR(30),
+email VARCHAR(50),
+role VARCHAR(10),
+password VARCHAR(100)
+);
