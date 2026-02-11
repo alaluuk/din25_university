@@ -3,6 +3,7 @@ const app=express();
 const PORT=3000;
 const userRouter=require('./routes/users');
 const loginRouter=require('./routes/login');
+const courseRouter=require('./routes/courses');
 const dotenv=require('dotenv');
 const jwt=require('jsonwebtoken');
 
@@ -18,6 +19,7 @@ app.use('/login',loginRouter);
 app.use(authenticateToken);
 //protected routes
 app.use('/users',userRouter);
+app.use('/courses',courseRouter);
 
 
 app.listen(PORT, function(){
