@@ -11,3 +11,12 @@ email VARCHAR(50),
 role VARCHAR(10),
 password VARCHAR(100)
 );
+
+CREATE TABLE courses(
+    course_code CHAR(5) primary key,
+    name VARCHAR(30),
+    credit_points SMALLINT
+);
+
+INSERT INTO courses VALUES('ICT01', 'Databases',5);
+INSERT INTO courses VALUES('CIV01', 'Basic of Architecture',4);
