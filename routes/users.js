@@ -39,6 +39,7 @@ router.post('/', function(request, response){
             response.send(err);
         }
         else{
+            //response.json(result.affectedRows);
             response.json(result);
         }
     })
@@ -46,7 +47,7 @@ router.post('/', function(request, response){
 
 router.put('/:un', function(request, response){
     if(request.params.un != request.user.username && request.user.role != 'admin'){
-        return response.status(403).json("You dont have priviledges");
+        return response.status(403).json("You don't have priviledges");
     }
     users.editUser(request.params.un, request.body, function(err, result){
         if(err){
@@ -55,6 +56,21 @@ router.put('/:un', function(request, response){
         else {
             response.json(result);
         }
+    })
+});
+
+router.delete('/:un', function(request, response){
+    if(request.user.role != 'admin'){
+        return response.status(403).json("You don't have priviledges");
+    }
+    users.delete(request.params.un, function(err, result){
+        if(err){
+            response.send(err);
+        }
+        else {
+            response.json(result);
+        } 
+            
     })
 });
 
