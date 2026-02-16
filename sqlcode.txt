@@ -20,3 +20,15 @@ CREATE TABLE courses(
 
 INSERT INTO courses VALUES('ICT01', 'Databases',5);
 INSERT INTO courses VALUES('CIV01', 'Basic of Architecture',4);
+
+CREATE TABLE grades(
+id_grades INT PRIMARY KEY AUTO_INCREMENT,
+username VARCHAR(20),
+course_code CHAR(5),
+grade SMALLINT,
+grade_date TIMESTAMP,
+FOREIGN KEY (username) REFERENCES users(username)
+    ON DELETE RESTRICT ON UPDATE CASCADE,
+FOREIGN KEY (course_code) REFERENCES courses(course_code)
+    ON DELETE RESTRICT ON UPDATE CASCADE
+);
