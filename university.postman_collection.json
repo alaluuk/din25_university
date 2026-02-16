@@ -55,13 +55,13 @@
         "method": "GET",
         "header": [],
         "url": {
-          "raw": "{{base_url}}/users/user01",
+          "raw": "{{base_url}}/users/user03",
           "host": [
             "{{base_url}}"
           ],
           "path": [
             "users",
-            "user01"
+            "user03"
           ]
         }
       },
@@ -101,7 +101,7 @@
         "header": [],
         "body": {
           "mode": "raw",
-          "raw": "{\r\n    \"username\":\"user03\",\r\n    \"password\":\"pass01\"\r\n}",
+          "raw": "{\r\n    \"username\":\"user01\",\r\n    \"password\":\"pass01\"\r\n}",
           "options": {
             "raw": {
               "language": "json"
@@ -273,6 +273,183 @@
         "header": []
       },
       "response": []
+    },
+    {
+      "name": "addGrade",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"username\":\"user03X\",\r\n    \"course_code\":\"ICT01X\",\r\n    \"grade\":4,\r\n    \"grade_date\":\"2026-01-16:14:47:00\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{base_url}}/grades",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "grades"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "updateGrade",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"username\":\"user03\",\r\n    \"course_code\":\"ICT01\",\r\n    \"grade\":3,\r\n    \"grade_date\":\"2026-01-16:14:51:00\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{base_url}}/grades/2",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "grades",
+            "2"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "deleteGrade",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"username\":\"user03X\",\r\n    \"course_code\":\"ICT01X\",\r\n    \"grade\":4,\r\n    \"grade_date\":\"2026-01-16:14:47:00\"\r\n}"
+        },
+        "url": {
+          "raw": "{{base_url}}/grades/5",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "grades",
+            "5"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "getAllGrades",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"username\":\"user03X\",\r\n    \"course_code\":\"ICT01X\",\r\n    \"grade\":4,\r\n    \"grade_date\":\"2026-01-16:14:47:00\"\r\n}"
+        },
+        "url": {
+          "raw": "{{base_url}}/grades",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "grades"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "getOneGrade",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"username\":\"user03X\",\r\n    \"course_code\":\"ICT01X\",\r\n    \"grade\":4,\r\n    \"grade_date\":\"2026-01-16:14:47:00\"\r\n}"
+        },
+        "url": {
+          "raw": "{{base_url}}/grades/2",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "grades",
+            "2"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "getMyGrades",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"username\":\"user03X\",\r\n    \"course_code\":\"ICT01X\",\r\n    \"grade\":4,\r\n    \"grade_date\":\"2026-01-16:14:47:00\"\r\n}"
+        },
+        "url": {
+          "raw": "{{base_url}}/grades/owngrades/user05",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "grades",
+            "owngrades",
+            "user05"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "updateGradeValue",
+      "request": {
+        "method": "PATCH",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"grade\":2\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{base_url}}/grades/2",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "grades",
+            "2"
+          ]
+        }
+      },
+      "response": []
     }
   ],
   "auth": {
@@ -280,7 +457,7 @@
     "bearer": [
       {
         "key": "token",
-        "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InVzZXIwMyIsInJvbGUiOiJzdHVkZW50IiwiaWF0IjoxNzcwODA5MzIxLCJleHAiOjE3NzA4MTExMjF9.NNYlXYAOsojtDjnhXHh2Yocb8a8cV6eM1jLukMYDxW4",
+        "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InVzZXIwNSIsInJvbGUiOiJzdHVkZW50IiwiaWF0IjoxNzcxMjQ3MzQ4LCJleHAiOjE3NzEyNDkxNDh9.m5Fi8SLwAQC7w5s7WXVcGtB-g1AyXSs6rFs3s38nnnI",
         "type": "string"
       }
     ]
