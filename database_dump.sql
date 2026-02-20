@@ -33,7 +33,7 @@ CREATE TABLE `course_enrollments` (
   KEY `offering_enrollments_idx` (`id_course_offering`),
   CONSTRAINT `offering_enrollments` FOREIGN KEY (`id_course_offering`) REFERENCES `course_offering` (`idcourse_offering`) ON DELETE RESTRICT ON UPDATE CASCADE,
   CONSTRAINT `student_enrollments` FOREIGN KEY (`student_username`) REFERENCES `users` (`username`) ON DELETE RESTRICT ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -42,6 +42,7 @@ CREATE TABLE `course_enrollments` (
 
 LOCK TABLES `course_enrollments` WRITE;
 /*!40000 ALTER TABLE `course_enrollments` DISABLE KEYS */;
+INSERT INTO `course_enrollments` VALUES (1,1,'user01'),(3,1,'user03'),(4,1,'user05');
 /*!40000 ALTER TABLE `course_enrollments` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -73,6 +74,7 @@ CREATE TABLE `course_offering` (
 
 LOCK TABLES `course_offering` WRITE;
 /*!40000 ALTER TABLE `course_offering` DISABLE KEYS */;
+INSERT INTO `course_offering` VALUES (1,'ICT03','user11','2026-03-09','2026-04-30','2026-03-08');
 /*!40000 ALTER TABLE `course_offering` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -156,7 +158,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES ('user01','Lisa','Jones','ann.jones@gmail.com','admin','$2b$12$uFL65kKxj40jFCnK0opT/.ei8gJAB/0TnHKE4McDc3y2PZZax6HrW'),('user02','Ann','Jones','ann.jones@gmail.com','admin','$2b$12$sGzlIOF8OEjTQ5sq8w2R5uiwBSVYoaGCGcKQ2PQwxwezjlRuDFRAu'),('user03','Tim','Jones','tim.jones@gmail.com','student','$2b$12$MEhp/oO282CKDiVJmLWmo.MLdct2TVRiEFYGv4/6LYQ.Ii9V6clXC'),('user05','Tim','Daniels','tim@gmail.com','student','$2b$12$8KieAXpRSUWdb.Gyh24zMOKQL8mfNDaFWNANsT/7AxrTGTzMWMoIe'),('user11','Tim','Daniels','tim@gmail.com','teacher','$2b$12$TdouGOelwhuIqoatpNuqYu23teKJj7uYIlQPy3n.5Ho4wBY5vkW9u');
+INSERT INTO `users` VALUES ('user01','Lisa','Jones','ann.jones@gmail.com','student','$2b$12$uFL65kKxj40jFCnK0opT/.ei8gJAB/0TnHKE4McDc3y2PZZax6HrW'),('user02','Ann','Jones','ann.jones@gmail.com','admin','$2b$12$sGzlIOF8OEjTQ5sq8w2R5uiwBSVYoaGCGcKQ2PQwxwezjlRuDFRAu'),('user03','Tim','Jones','tim.jones@gmail.com','student','$2b$12$MEhp/oO282CKDiVJmLWmo.MLdct2TVRiEFYGv4/6LYQ.Ii9V6clXC'),('user05','Tim','Daniels','tim@gmail.com','student','$2b$12$8KieAXpRSUWdb.Gyh24zMOKQL8mfNDaFWNANsT/7AxrTGTzMWMoIe'),('user11','Tim','Daniels','tim@gmail.com','teacher','$2b$12$TdouGOelwhuIqoatpNuqYu23teKJj7uYIlQPy3n.5Ho4wBY5vkW9u');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -169,4 +171,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2026-02-20 10:18:33
+-- Dump completed on 2026-02-20 11:21:44

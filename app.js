@@ -5,6 +5,7 @@ const userRouter=require('./routes/users');
 const loginRouter=require('./routes/login');
 const courseRouter=require('./routes/courses');
 const gradeRouter=require('./routes/grades');
+const enrollmentRouter=require('./routes/enrollments');
 const dotenv=require('dotenv');
 const jwt=require('jsonwebtoken');
 
@@ -22,6 +23,7 @@ app.use(authenticateToken);
 app.use('/users',userRouter);
 app.use('/courses',courseRouter);
 app.use('/grades',gradeRouter);
+app.use('/enrollments',enrollmentRouter);
 
 
 app.listen(PORT, function(){
