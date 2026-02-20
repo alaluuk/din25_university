@@ -2,4 +2,4 @@
 
 ## Database ER-model
 
-<img src="er_model.png" ALT "er_model">
+<img src="er_model.png">
